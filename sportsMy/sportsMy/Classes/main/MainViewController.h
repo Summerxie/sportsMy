@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  sportsMy
 //
 //  Created by Summer on 17/4/21.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MainViewController : UIViewController
 
 @end
-
