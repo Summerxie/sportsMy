@@ -7,7 +7,7 @@ target 'sportsMy' do
 
   # Pods for sportsMy
 
-  pod 'AMap3DMap' #3D地图SDK
+pod 'AMap3DMap', '~> 4.1.0’ #3D地图SDK
  pod 'AMapSearch' #搜索服务SDK
 
 end

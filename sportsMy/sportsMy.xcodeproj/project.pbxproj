@@ -14,8 +14,10 @@
 		B15994FC1EA9985000C96F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B15994FB1EA9985000C96F67 /* Assets.xcassets */; };
 		B15994FF1EA9985000C96F67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B15994FD1EA9985000C96F67 /* LaunchScreen.storyboard */; };
 		B159950D1EA99FB700C96F67 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B159950C1EA99FB700C96F67 /* MainViewController.m */; };
-		B15995121EA9A07700C96F67 /* myTrackController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15995101EA9A07700C96F67 /* myTrackController.m */; };
-		B15995131EA9A07700C96F67 /* myTrackController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B15995111EA9A07700C96F67 /* myTrackController.xib */; };
+		B15995161EA9B5C000C96F67 /* trackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B15995151EA9B5C000C96F67 /* trackModel.m */; };
+		B159951C1EA9CBCB00C96F67 /* myTrackController.m in Sources */ = {isa = PBXBuildFile; fileRef = B159951A1EA9CBCB00C96F67 /* myTrackController.m */; };
+		B159951D1EA9CBCB00C96F67 /* myTrackController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B159951B1EA9CBCB00C96F67 /* myTrackController.xib */; };
+		B15995201EA9CBE700C96F67 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B159951F1EA9CBE700C96F67 /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +34,13 @@
 		B15995001EA9985000C96F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B159950B1EA99FB700C96F67 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		B159950C1EA99FB700C96F67 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		B159950F1EA9A07700C96F67 /* myTrackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myTrackController.h; sourceTree = "<group>"; };
-		B15995101EA9A07700C96F67 /* myTrackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myTrackController.m; sourceTree = "<group>"; };
-		B15995111EA9A07700C96F67 /* myTrackController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myTrackController.xib; sourceTree = "<group>"; };
+		B15995141EA9B5C000C96F67 /* trackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trackModel.h; sourceTree = "<group>"; };
+		B15995151EA9B5C000C96F67 /* trackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trackModel.m; sourceTree = "<group>"; };
+		B15995191EA9CBCB00C96F67 /* myTrackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myTrackController.h; sourceTree = "<group>"; };
+		B159951A1EA9CBCB00C96F67 /* myTrackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myTrackController.m; sourceTree = "<group>"; };
+		B159951B1EA9CBCB00C96F67 /* myTrackController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myTrackController.xib; sourceTree = "<group>"; };
+		B159951E1EA9CBE700C96F67 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		B159951F1EA9CBE700C96F67 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +115,7 @@
 		B15995071EA998D000C96F67 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B159950E1EA9A05800C96F67 /* track */,
+				B15995171EA9CBCB00C96F67 /* track */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -129,6 +135,8 @@
 		B15995091EA998D000C96F67 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				B15995141EA9B5C000C96F67 /* trackModel.h */,
+				B15995151EA9B5C000C96F67 /* trackModel.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -140,14 +148,24 @@
 			path = views;
 			sourceTree = "<group>";
 		};
-		B159950E1EA9A05800C96F67 /* track */ = {
+		B15995171EA9CBCB00C96F67 /* track */ = {
 			isa = PBXGroup;
 			children = (
-				B159950F1EA9A07700C96F67 /* myTrackController.h */,
-				B15995101EA9A07700C96F67 /* myTrackController.m */,
-				B15995111EA9A07700C96F67 /* myTrackController.xib */,
+				B15995191EA9CBCB00C96F67 /* myTrackController.h */,
+				B159951A1EA9CBCB00C96F67 /* myTrackController.m */,
+				B159951B1EA9CBCB00C96F67 /* myTrackController.xib */,
+				B15995181EA9CBCB00C96F67 /* map */,
 			);
-			name = track;
+			path = track;
+			sourceTree = "<group>";
+		};
+		B15995181EA9CBCB00C96F67 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				B159951E1EA9CBE700C96F67 /* MapViewController.h */,
+				B159951F1EA9CBE700C96F67 /* MapViewController.m */,
+			);
+			path = map;
 			sourceTree = "<group>";
 		};
 		E9EBAE81A2268B8809824E53 /* Pods */ = {
@@ -195,6 +213,11 @@
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = C395G32AFM;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -222,7 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B15994FF1EA9985000C96F67 /* LaunchScreen.storyboard in Resources */,
-				B15995131EA9A07700C96F67 /* myTrackController.xib in Resources */,
+				B159951D1EA9CBCB00C96F67 /* myTrackController.xib in Resources */,
 				B15994FC1EA9985000C96F67 /* Assets.xcassets in Resources */,
 				B15994FA1EA9985000C96F67 /* Main.storyboard in Resources */,
 			);
@@ -283,9 +306,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B15995161EA9B5C000C96F67 /* trackModel.m in Sources */,
 				B15994F41EA9985000C96F67 /* AppDelegate.m in Sources */,
-				B15995121EA9A07700C96F67 /* myTrackController.m in Sources */,
 				B159950D1EA99FB700C96F67 /* MainViewController.m in Sources */,
+				B15995201EA9CBE700C96F67 /* MapViewController.m in Sources */,
+				B159951C1EA9CBCB00C96F67 /* myTrackController.m in Sources */,
 				B15994F11EA9985000C96F67 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
