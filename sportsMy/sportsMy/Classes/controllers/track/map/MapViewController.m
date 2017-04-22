@@ -11,6 +11,8 @@
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import "trackModel.h"
 
+
+
 @interface MapViewController () <MAMapViewDelegate>
 
 @end
@@ -29,6 +31,35 @@
     [self setupMapview];
     
     
+}
+
+
+-(instancetype)initWithSportsType: (sportType)sportType{
+    self = [super init];
+    
+    _mySportType = sportType;
+    
+    if (self){
+       
+        switch (sportType) {
+                
+            case sportTypeRun:
+                self.sportsImgName = @"map_annotation_run";
+                break;
+                
+            case sportTypeWalking:
+                self.sportsImgName = @"map_annotation_walk";
+                break;
+            case sportTypeRiding:
+                self.sportsImgName = @"map_annotation_bike";
+                break;
+                
+            default:
+                break;
+        }
+    }
+    
+    return self;
 }
 
 -(void)setupMapview
@@ -83,6 +114,30 @@
 }
 
 
+-(MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
+{
+    
+    if ([annotation isKindOfClass:[MAPointAnnotation class]]) {
+       static NSString *pointReuseIndentifier = @"pointReuseIndentifier";
+        
+        MAPinAnnotationView*annotationView = (MAPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndentifier];
+        if (annotationView == nil)
+        {
+            annotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pointReuseIndentifier];
+        }
+        annotationView.canShowCallout= YES;       //设置气泡可以弹出，默认为NO
+        annotationView.animatesDrop = YES;        //设置标注动画显示，默认为NO
+        annotationView.draggable = YES;
+        annotationView.image = [UIImage imageNamed:self.sportsImgName];
+        
+        //设置标注可以拖动，默认为NO
+//        annotationView.pinColor = MAPinAnnotationColorPurple;
+        return annotationView;
+    }
+    return nil;
+    
+}
+
 -(void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
 {
     
@@ -90,13 +145,20 @@
         return;
     }
     
+    _mapView.centerCoordinate = userLocation.location.coordinate;
 
     
 //    MAPolyline *polyline = [self.track appedPolylineWithDestLoc:userLocation.location];
     
     if (self.sourceLoc == nil) {
         
+        MAPointAnnotation *anno = [[MAPointAnnotation alloc] init];
+        anno.coordinate = userLocation.location.coordinate;
+        anno.title = userLocation.title;
+        anno.subtitle = userLocation.subtitle;
         self.sourceLoc = userLocation.location;
+        
+        [_mapView addAnnotation:anno];
        
     }
     

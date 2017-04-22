@@ -22,21 +22,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ZD-td-Nx7">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ZD-td-Nx7">
                                 <rect key="frame" x="124" y="145" width="127" height="30"/>
                                 <state key="normal" title="你今天走了1000米"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hye-PH-3Pv">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hye-PH-3Pv">
                                 <rect key="frame" x="124" y="248" width="127" height="30"/>
-                                <state key="normal" title="你今天走了1000米"/>
+                                <state key="normal" title="骑行"/>
+                                <connections>
+                                    <action selector="trackClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PBd-0i-upp"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8u-p1-7fa">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8u-p1-7fa">
                                 <rect key="frame" x="124" y="299" width="127" height="30"/>
-                                <state key="normal" title="你今天走了1000米"/>
+                                <state key="normal" title="步行"/>
+                                <connections>
+                                    <action selector="trackClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9dH-lH-OBt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybM-UR-Q0A">
                                 <rect key="frame" x="164" y="204" width="46" height="30"/>
-                                <state key="normal" title="走一走"/>
+                                <state key="normal" title="跑步"/>
                                 <connections>
                                     <action selector="trackClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bzF-ZY-eE8"/>
                                 </connections>
@@ -66,6 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="43.628185907046479"/>
         </scene>
     </scenes>
 </document>

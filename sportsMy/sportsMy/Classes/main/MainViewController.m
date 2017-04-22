@@ -20,8 +20,37 @@
     // Do any additional setup after loading the view.
 }
 - (IBAction)trackClick:(UIButton *)sender {
+    
+//    ,
+//    sportTypeWalking,
+//    sportTypeRiding
+    
+    myTrackController *vc;
+    
+    switch (sender.tag) {
+        case sportTypeRun:
+        {
+           vc = [[myTrackController alloc] initWithSportsType:sportTypeRun];
+        }
+            break;
+        case sportTypeWalking:
+        {
+            vc = [[myTrackController alloc] initWithSportsType:sportTypeWalking];
+        }
+            break;
+            
+        case sportTypeRiding:
+        {
+            vc = [[myTrackController alloc] initWithSportsType:sportTypeRiding];
+        }
+            break;
+            
+            
+        default:
+            break;
+    }
 
-    myTrackController *vc = [[myTrackController alloc] init];
+//    myTrackController *vc = [[myTrackController alloc] init];
     
     [self presentViewController:vc animated:YES completion:nil];
     

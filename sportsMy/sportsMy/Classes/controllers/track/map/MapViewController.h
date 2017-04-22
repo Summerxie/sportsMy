@@ -10,10 +10,22 @@
 #import <MAMapKit/MAMapKit.h>
 #import "trackModel.h"
 
+typedef enum : NSUInteger{
+    sportTypeRun,
+    sportTypeWalking,
+    sportTypeRiding,
+} sportType;
+
 @interface MapViewController : UIViewController
 
 @property(nonatomic, strong ,readonly)MAMapView *mapView;
 @property(nonatomic, strong) trackModel *track;
 @property(nonatomic, strong) CLLocation *sourceLoc;
+@property(nonatomic, assign) sportType mySportType;
+@property(nonatomic, copy) NSString *sportsImgName;
+
+-(instancetype)initWithSportsType: (sportType)sportType;
+
+
 
 @end

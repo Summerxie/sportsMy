@@ -7,7 +7,7 @@
 //
 
 #import "myTrackController.h"
-#import "MapViewController.h"
+
 
 @interface myTrackController ()
 @property (weak, nonatomic) IBOutlet UIView *trackView;
@@ -19,15 +19,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    MapViewController *mapViewVc = [[MapViewController alloc] init];
     
-    [self addChildViewController:mapViewVc];
-    
-    [self.view addSubview:mapViewVc.view];
-    
-    mapViewVc.view.frame = self.trackView.bounds;
+   
     
     
+}
+
+-(instancetype)initWithSportsType: (sportType)sportType
+{
+    
+    if (self = [super init]) {
+        
+        MapViewController *mapViewVc = [[MapViewController alloc] initWithSportsType:sportType];
+        [self addChildViewController:mapViewVc];
+        
+        [self.view addSubview:mapViewVc.view];
+        
+        mapViewVc.view.frame = self.trackView.bounds;
+
+    }
+    
+    return self;
 }
 
 - (void)didReceiveMemoryWarning {
