@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "myTrackController.h"
+#import "trackModel.h"
 
 @interface MainViewController ()
 
@@ -21,36 +22,11 @@
 }
 - (IBAction)trackClick:(UIButton *)sender {
     
-//    ,
-//    sportTypeWalking,
-//    sportTypeRiding
-    
-    myTrackController *vc;
-    
-    switch (sender.tag) {
-        case sportTypeRun:
-        {
-           vc = [[myTrackController alloc] initWithSportsType:sportTypeRun];
-        }
-            break;
-        case sportTypeWalking:
-        {
-            vc = [[myTrackController alloc] initWithSportsType:sportTypeWalking];
-        }
-            break;
-            
-        case sportTypeRiding:
-        {
-            vc = [[myTrackController alloc] initWithSportsType:sportTypeRiding];
-        }
-            break;
-            
-            
-        default:
-            break;
-    }
+    trackModel *track = [[trackModel alloc] initWithSportsType:sender.tag];
 
-//    myTrackController *vc = [[myTrackController alloc] init];
+    myTrackController *vc = [[myTrackController alloc] init];
+    
+    vc.track = track;
     
     [self presentViewController:vc animated:YES completion:nil];
     

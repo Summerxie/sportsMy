@@ -19,28 +19,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    MapViewController *mapViewVc = [[MapViewController alloc] initWithSportsType:self.track.mySportType];
+    [self addChildViewController:mapViewVc];
     
+    [self.view addSubview:mapViewVc.view];
+    
+    mapViewVc.view.frame = self.trackView.bounds;
    
     
     
 }
 
--(instancetype)initWithSportsType: (sportType)sportType
-{
-    
-    if (self = [super init]) {
-        
-        MapViewController *mapViewVc = [[MapViewController alloc] initWithSportsType:sportType];
-        [self addChildViewController:mapViewVc];
-        
-        [self.view addSubview:mapViewVc.view];
-        
-        mapViewVc.view.frame = self.trackView.bounds;
-
-    }
-    
-    return self;
-}
+//-(instancetype)initWithSportsType: (sportType)sportType
+//{
+//    
+//    if (self = [super init]) {
+//        
+//      
+//
+//    }
+//    
+//    return self;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

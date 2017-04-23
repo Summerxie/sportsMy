@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
+#import "trackModel.h"
 
 @interface myTrackController : UIViewController
 @property(nonatomic, assign) sportType mySportType;
 @property(nonatomic, copy) NSString *sportsImgName;
+@property(nonatomic,strong) trackModel *track;
 
 
--(instancetype)initWithSportsType: (sportType)sportType;
+//-(instancetype)initWithSportsType: (sportType)sportType;
 
 @end

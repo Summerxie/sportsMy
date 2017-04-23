@@ -7,6 +7,7 @@
 //
 
 #import "trackModel.h"
+#import "Mypolyline.h"
 
 @implementation trackModel
 
@@ -39,7 +40,7 @@
 }
 
 
-- (MAPolyline *)appedPolylineWithDestLoc: (CLLocation *)destLoc
+- (Mypolyline *)appedPolylineWithDestLoc: (CLLocation *)destLoc
 {
     if (self.sourceLoc == nil) {
         
@@ -47,15 +48,27 @@
         return nil;
     }
     
-    CLLocationCoordinate2D polyLineCoordinates[2];
+    if (destLoc.speed <= 0) {
+        
+        return nil;
+    }
     
-    polyLineCoordinates[0].latitude = _sourceLoc.coordinate.latitude;
-    polyLineCoordinates[0].longitude = _sourceLoc.coordinate.longitude;
+    //排除已经"过期"的定位数据  计算当前时间和定位时间戳的差值  2秒以内的数据可用
+    if ([[NSDate date] timeIntervalSinceDate:destLoc.timestamp] >= 2) {
+        
+        return nil;
+    }
+
     
-    polyLineCoordinates[1].latitude = destLoc.coordinate.latitude;
-    polyLineCoordinates[1].longitude = destLoc.coordinate.longitude;
+//    CLLocationCoordinate2D polyLineCoordinates[2];
+//    
+//    polyLineCoordinates[0].latitude = _sourceLoc.coordinate.latitude;
+//    polyLineCoordinates[0].longitude = _sourceLoc.coordinate.longitude;
+//    
+//    polyLineCoordinates[1].latitude = destLoc.coordinate.latitude;
+//    polyLineCoordinates[1].longitude = destLoc.coordinate.longitude;
     
-    MAPolyline *polyline = [MAPolyline polylineWithCoordinates:polyLineCoordinates count:2];
+    Mypolyline *polyline = [Mypolyline polylineWithSourceLocation:self.sourceLoc andDestLocation:destLoc];
     
     _sourceLoc = destLoc;
     

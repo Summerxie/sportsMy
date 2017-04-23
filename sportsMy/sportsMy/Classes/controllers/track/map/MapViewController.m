@@ -135,10 +135,8 @@
     }
     
     _mapView.centerCoordinate = userLocation.location.coordinate;
-
-
     
-    Mypolyline *polyline = [Mypolyline polylineWithSourceLocation:self.track.sourceLoc andDestLocation:userLocation.location];
+    Mypolyline *polyline = [self.track appedPolylineWithDestLoc:userLocation.location];
     
     self.polyline = polyline;
     

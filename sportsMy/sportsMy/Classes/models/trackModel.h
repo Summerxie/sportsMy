@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MAMapKit/MAMapKit.h>
+#import "Mypolyline.h"
 
 typedef enum : NSUInteger{
     sportTypeRun,
@@ -15,16 +16,23 @@ typedef enum : NSUInteger{
     sportTypeRiding,
 } sportType;
 
+typedef enum : NSUInteger {
+    sportStateContinue,
+    sportStatePause,
+    sportStateComplete,
+} sportState;
+
 @interface trackModel : NSObject
 
 @property(nonatomic, strong) CLLocation *sourceLoc;
 @property(nonatomic, assign) sportType mySportType;
 @property(nonatomic, copy) NSString *sportsImgName;
 @property(nonatomic, strong) MAPointAnnotation *anno;
+@property(nonatomic,assign) sportState mySportState;
 
 
 
-- (MAPolyline *)appedPolylineWithDestLoc: (CLLocation *)destLoc;
+- (Mypolyline *)appedPolylineWithDestLoc: (CLLocation *)destLoc;
 
 -(instancetype)initWithSportsType: (sportType)sportType;
 
