@@ -10,10 +10,13 @@
 #import <MAMapKit/MAMapKit.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import "trackModel.h"
+#import "Mypolyline.h"
 
 
 
 @interface MapViewController () <MAMapViewDelegate>
+
+@property(nonatomic, strong) Mypolyline *polyline;
 
 @end
 
@@ -88,7 +91,8 @@
         MAPolylineRenderer *polylineRenderer = [[MAPolylineRenderer alloc] initWithPolyline:overlay];
         
         polylineRenderer.lineWidth    = 8.f;
-        polylineRenderer.strokeColor  = [UIColor colorWithRed:0 green:1 blue:0 alpha:0.6];
+        polylineRenderer.strokeColor  = self.polyline.color;
+        
         polylineRenderer.lineJoinType = kMALineJoinRound;
         polylineRenderer.lineCapType  = kMALineCapRound;
         
@@ -132,11 +136,30 @@
     
     _mapView.centerCoordinate = userLocation.location.coordinate;
 
+
     
-    MAPolyline *polyline = [self.track appedPolylineWithDestLoc:userLocation.location];
+    Mypolyline *polyline = [Mypolyline polylineWithSourceLocation:self.track.sourceLoc andDestLocation:userLocation.location];
+    
+    self.polyline = polyline;
+    
+    self.track.sourceLoc = userLocation.location;
 
     [_mapView addOverlay:polyline];
+    
+    if (self.track.anno == nil) {
+        self.track.anno = [[MAPointAnnotation alloc] init];
+        self.track.anno.coordinate = userLocation.location.coordinate;
+        self.track.anno.title = userLocation.title;
+        self.track.anno.subtitle = userLocation.subtitle;
+    
+         [_mapView addAnnotation:self.track.anno];
+    }
+    
+   
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -13,6 +13,7 @@
 @property(nonatomic, assign) CGFloat speed;
 @property(nonatomic, strong) UIColor *color;
 
+
 + (instancetype)polylineWithSourceLocation:(CLLocation *)source andDestLocation:(CLLocation *)dest;
 
 @end

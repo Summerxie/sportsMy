@@ -20,9 +20,12 @@ typedef enum : NSUInteger{
 @property(nonatomic, strong) CLLocation *sourceLoc;
 @property(nonatomic, assign) sportType mySportType;
 @property(nonatomic, copy) NSString *sportsImgName;
+@property(nonatomic, strong) MAPointAnnotation *anno;
+
 
 
 - (MAPolyline *)appedPolylineWithDestLoc: (CLLocation *)destLoc;
+
 -(instancetype)initWithSportsType: (sportType)sportType;
 
 @end

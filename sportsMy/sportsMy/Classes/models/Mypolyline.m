@@ -12,6 +12,10 @@
 
 + (instancetype)polylineWithSourceLocation:(CLLocation *)source andDestLocation:(CLLocation *)dest{
     
+    if (source == nil) {
+        return nil;
+    }
+    
     CLLocationCoordinate2D polylineCoordinats[2];
     
     polylineCoordinats[0].latitude = source.coordinate.latitude;

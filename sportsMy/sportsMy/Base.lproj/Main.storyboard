@@ -28,14 +28,14 @@
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hye-PH-3Pv">
                                 <rect key="frame" x="124" y="248" width="127" height="30"/>
-                                <state key="normal" title="骑行"/>
+                                <state key="normal" title="步行"/>
                                 <connections>
                                     <action selector="trackClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PBd-0i-upp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8u-p1-7fa">
                                 <rect key="frame" x="124" y="299" width="127" height="30"/>
-                                <state key="normal" title="步行"/>
+                                <state key="normal" title="骑行"/>
                                 <connections>
                                     <action selector="trackClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9dH-lH-OBt"/>
                                 </connections>
