@@ -30,33 +30,18 @@
     
     [self setupMapview];
     
-    
 }
 
 
 -(instancetype)initWithSportsType: (sportType)sportType{
+    
     self = [super init];
     
-    _mySportType = sportType;
     
     if (self){
        
-        switch (sportType) {
-                
-            case sportTypeRun:
-                self.sportsImgName = @"map_annotation_run";
-                break;
-                
-            case sportTypeWalking:
-                self.sportsImgName = @"map_annotation_walk";
-                break;
-            case sportTypeRiding:
-                self.sportsImgName = @"map_annotation_bike";
-                break;
-                
-            default:
-                break;
-        }
+        self.track = [[trackModel alloc] initWithSportsType:sportType];
+
     }
     
     return self;
@@ -128,7 +113,7 @@
         annotationView.canShowCallout= YES;       //设置气泡可以弹出，默认为NO
         annotationView.animatesDrop = YES;        //设置标注动画显示，默认为NO
         annotationView.draggable = YES;
-        annotationView.image = [UIImage imageNamed:self.sportsImgName];
+        annotationView.image = [UIImage imageNamed:self.track.sportsImgName];
         
         //设置标注可以拖动，默认为NO
 //        annotationView.pinColor = MAPinAnnotationColorPurple;
@@ -148,39 +133,9 @@
     _mapView.centerCoordinate = userLocation.location.coordinate;
 
     
-//    MAPolyline *polyline = [self.track appedPolylineWithDestLoc:userLocation.location];
-    
-    if (self.sourceLoc == nil) {
-        
-        MAPointAnnotation *anno = [[MAPointAnnotation alloc] init];
-        anno.coordinate = userLocation.location.coordinate;
-        anno.title = userLocation.title;
-        anno.subtitle = userLocation.subtitle;
-        self.sourceLoc = userLocation.location;
-        
-        [_mapView addAnnotation:anno];
-       
-    }
-    
-    else
-    {
-    CLLocationCoordinate2D polyLineCoordinates[2];
-    
-    polyLineCoordinates[0].latitude = _sourceLoc.coordinate.latitude;
-    polyLineCoordinates[0].longitude = _sourceLoc.coordinate.longitude;
-    
-    polyLineCoordinates[1].latitude = userLocation.location.coordinate.latitude;
-    polyLineCoordinates[1].longitude = userLocation.location.coordinate.longitude;
-    
-    MAPolyline *polyline = [MAPolyline polylineWithCoordinates:polyLineCoordinates count:2];
-    
-    _sourceLoc = userLocation.location;
+    MAPolyline *polyline = [self.track appedPolylineWithDestLoc:userLocation.location];
 
-    
     [_mapView addOverlay:polyline];
-        
-        
-    }
 }
 
 - (void)didReceiveMemoryWarning {

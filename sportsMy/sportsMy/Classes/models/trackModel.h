@@ -9,10 +9,20 @@
 #import <Foundation/Foundation.h>
 #import <MAMapKit/MAMapKit.h>
 
+typedef enum : NSUInteger{
+    sportTypeRun,
+    sportTypeWalking,
+    sportTypeRiding,
+} sportType;
+
 @interface trackModel : NSObject
 
 @property(nonatomic, strong) CLLocation *sourceLoc;
+@property(nonatomic, assign) sportType mySportType;
+@property(nonatomic, copy) NSString *sportsImgName;
+
 
 - (MAPolyline *)appedPolylineWithDestLoc: (CLLocation *)destLoc;
+-(instancetype)initWithSportsType: (sportType)sportType;
 
 @end
