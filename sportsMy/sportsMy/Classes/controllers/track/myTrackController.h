@@ -16,6 +16,5 @@
 @property(nonatomic,strong) trackModel *track;
 
 
-//-(instancetype)initWithSportsType: (sportType)sportType;
 
 @end

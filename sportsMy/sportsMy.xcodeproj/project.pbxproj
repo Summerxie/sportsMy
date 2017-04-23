@@ -19,6 +19,8 @@
 		B159951D1EA9CBCB00C96F67 /* myTrackController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B159951B1EA9CBCB00C96F67 /* myTrackController.xib */; };
 		B15995201EA9CBE700C96F67 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B159951F1EA9CBE700C96F67 /* MapViewController.m */; };
 		B1EC004B1EACC69A00EEDABE /* Mypolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EC004A1EACC69A00EEDABE /* Mypolyline.m */; };
+		B1EC00531EACFD5E00EEDABE /* mainSportController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EC00511EACFD5E00EEDABE /* mainSportController.m */; };
+		B1EC00541EACFD5E00EEDABE /* mainSportController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1EC00521EACFD5E00EEDABE /* mainSportController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,9 @@
 		B159951F1EA9CBE700C96F67 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		B1EC00491EACC69A00EEDABE /* Mypolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mypolyline.h; sourceTree = "<group>"; };
 		B1EC004A1EACC69A00EEDABE /* Mypolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mypolyline.m; sourceTree = "<group>"; };
+		B1EC00501EACFD5E00EEDABE /* mainSportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainSportController.h; sourceTree = "<group>"; };
+		B1EC00511EACFD5E00EEDABE /* mainSportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainSportController.m; sourceTree = "<group>"; };
+		B1EC00521EACFD5E00EEDABE /* mainSportController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainSportController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +182,9 @@
 		B1EC004C1EACFCC300EEDABE /* mainSport */ = {
 			isa = PBXGroup;
 			children = (
+				B1EC00501EACFD5E00EEDABE /* mainSportController.h */,
+				B1EC00511EACFD5E00EEDABE /* mainSportController.m */,
+				B1EC00521EACFD5E00EEDABE /* mainSportController.xib */,
 			);
 			path = mainSport;
 			sourceTree = "<group>";
@@ -261,6 +269,7 @@
 				B159951D1EA9CBCB00C96F67 /* myTrackController.xib in Resources */,
 				B15994FC1EA9985000C96F67 /* Assets.xcassets in Resources */,
 				B15994FA1EA9985000C96F67 /* Main.storyboard in Resources */,
+				B1EC00541EACFD5E00EEDABE /* mainSportController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B15995161EA9B5C000C96F67 /* trackModel.m in Sources */,
+				B1EC00531EACFD5E00EEDABE /* mainSportController.m in Sources */,
 				B1EC004B1EACC69A00EEDABE /* Mypolyline.m in Sources */,
 				B15994F41EA9985000C96F67 /* AppDelegate.m in Sources */,
 				B159950D1EA99FB700C96F67 /* MainViewController.m in Sources */,

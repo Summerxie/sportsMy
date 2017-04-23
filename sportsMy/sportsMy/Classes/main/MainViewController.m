@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "myTrackController.h"
 #import "trackModel.h"
+#import "mainSportController.h"
 
 @interface MainViewController ()
 
@@ -24,7 +25,9 @@
     
     trackModel *track = [[trackModel alloc] initWithSportsType:sender.tag];
 
-    myTrackController *vc = [[myTrackController alloc] init];
+//    myTrackController *vc = [[myTrackController alloc] init];
+    
+    mainSportController *vc = [[mainSportController alloc]  init];
     
     vc.track = track;
     
