@@ -12,6 +12,19 @@
 
 + (instancetype)polylineWithSourceLocation:(CLLocation *)source andDestLocation:(CLLocation *)dest{
     
+    
+    if (dest.speed <= 0) {
+        
+        return nil;
+    }
+    
+    //排除已经"过期"的定位数据  计算当前时间和定位时间戳的差值  2秒以内的数据可用
+    if ([[NSDate date] timeIntervalSinceDate:dest.timestamp] >= 2) {
+        
+        return nil;
+    }
+
+    
     if (source == nil) {
         return nil;
     }
