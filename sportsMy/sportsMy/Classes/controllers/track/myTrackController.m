@@ -7,12 +7,14 @@
 //
 
 #import "myTrackController.h"
+#import "Animator.h"
 
 
 @interface myTrackController ()
 
 @property (weak, nonatomic) IBOutlet UIView *trackView;
 @property(nonatomic, strong) MapViewController *mapVc;
+@property(nonatomic,strong) Animator *animator;
 
 @end
 
@@ -29,20 +31,34 @@
     
     if (self = [super init]) {
         
-        MapViewController *mapViewVc = [[MapViewController alloc] initWithSportsType:self.track.mySportType];
+        [self setupMapView];
         
-        self.mapVc = mapViewVc;
+        self.modalPresentationStyle = UIModalPresentationCustom;
         
-        [self addChildViewController:mapViewVc];
+        self.animator = [[Animator alloc] init];
         
-        [self.view addSubview:mapViewVc.view];
+        self.transitioningDelegate = self.animator;
         
-        mapViewVc.view.frame = self.trackView.bounds;
+    
         
 
     }
     
     return self;
+}
+
+-(void)setupMapView{
+    
+    MapViewController *mapViewVc = [[MapViewController alloc] initWithSportsType:self.track.mySportType];
+    
+    self.mapVc = mapViewVc;
+    
+    [self addChildViewController:mapViewVc];
+    
+    [self.view addSubview:mapViewVc.view];
+    
+    mapViewVc.view.frame = self.view.bounds;
+
 }
 
 -(void)setTrack:(trackModel *)track

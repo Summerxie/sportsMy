@@ -9,6 +9,7 @@
 #import "mainSportController.h"
 #import "myTrackController.h"
 
+
 @interface mainSportController ()
 
 @property(nonatomic, strong) myTrackController *trackVc;
@@ -25,8 +26,6 @@
 }
 
 - (IBAction)trackBtn:(UIButton *)sender {
-    
-    
     
     [self presentViewController:self.trackVc animated:YES completion:nil];
 }

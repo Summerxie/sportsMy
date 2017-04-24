@@ -18,6 +18,7 @@
 		B159951C1EA9CBCB00C96F67 /* myTrackController.m in Sources */ = {isa = PBXBuildFile; fileRef = B159951A1EA9CBCB00C96F67 /* myTrackController.m */; };
 		B159951D1EA9CBCB00C96F67 /* myTrackController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B159951B1EA9CBCB00C96F67 /* myTrackController.xib */; };
 		B15995201EA9CBE700C96F67 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B159951F1EA9CBE700C96F67 /* MapViewController.m */; };
+		B1A5EDEB1EAE2CD700213A18 /* Animator.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A5EDEA1EAE2CD700213A18 /* Animator.m */; };
 		B1EC004B1EACC69A00EEDABE /* Mypolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EC004A1EACC69A00EEDABE /* Mypolyline.m */; };
 		B1EC00531EACFD5E00EEDABE /* mainSportController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EC00511EACFD5E00EEDABE /* mainSportController.m */; };
 		B1EC00541EACFD5E00EEDABE /* mainSportController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1EC00521EACFD5E00EEDABE /* mainSportController.xib */; };
@@ -44,6 +45,8 @@
 		B159951B1EA9CBCB00C96F67 /* myTrackController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myTrackController.xib; sourceTree = "<group>"; };
 		B159951E1EA9CBE700C96F67 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		B159951F1EA9CBE700C96F67 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		B1A5EDE91EAE2CD700213A18 /* Animator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animator.h; sourceTree = "<group>"; };
+		B1A5EDEA1EAE2CD700213A18 /* Animator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animator.m; sourceTree = "<group>"; };
 		B1EC00491EACC69A00EEDABE /* Mypolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mypolyline.h; sourceTree = "<group>"; };
 		B1EC004A1EACC69A00EEDABE /* Mypolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mypolyline.m; sourceTree = "<group>"; };
 		B1EC00501EACFD5E00EEDABE /* mainSportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainSportController.h; sourceTree = "<group>"; };
@@ -112,6 +115,7 @@
 		B15995061EA998D000C96F67 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B1A5EDE81EAE2CC700213A18 /* Animator */,
 				B15995071EA998D000C96F67 /* controllers */,
 				B15995081EA998D000C96F67 /* main */,
 				B15995091EA998D000C96F67 /* models */,
@@ -177,6 +181,15 @@
 				B159951F1EA9CBE700C96F67 /* MapViewController.m */,
 			);
 			path = map;
+			sourceTree = "<group>";
+		};
+		B1A5EDE81EAE2CC700213A18 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				B1A5EDE91EAE2CD700213A18 /* Animator.h */,
+				B1A5EDEA1EAE2CD700213A18 /* Animator.m */,
+			);
+			path = Animator;
 			sourceTree = "<group>";
 		};
 		B1EC004C1EACFCC300EEDABE /* mainSport */ = {
@@ -333,6 +346,7 @@
 				B1EC004B1EACC69A00EEDABE /* Mypolyline.m in Sources */,
 				B15994F41EA9985000C96F67 /* AppDelegate.m in Sources */,
 				B159950D1EA99FB700C96F67 /* MainViewController.m in Sources */,
+				B1A5EDEB1EAE2CD700213A18 /* Animator.m in Sources */,
 				B15995201EA9CBE700C96F67 /* MapViewController.m in Sources */,
 				B159951C1EA9CBCB00C96F67 /* myTrackController.m in Sources */,
 				B15994F11EA9985000C96F67 /* main.m in Sources */,
