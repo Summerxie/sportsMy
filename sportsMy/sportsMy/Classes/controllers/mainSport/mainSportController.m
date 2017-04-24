@@ -19,7 +19,9 @@
 
 - (IBAction)stateBtnClick:(UIButton *)sender {
     
+    self.track.mySportState = sender.tag;
     
+    self.trackVc.track = self.track;
 }
 
 - (IBAction)trackBtn:(UIButton *)sender {

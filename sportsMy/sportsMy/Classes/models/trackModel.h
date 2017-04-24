@@ -34,6 +34,6 @@ typedef enum : NSUInteger {
 
 - (Mypolyline *)appedPolylineWithDestLoc: (CLLocation *)destLoc;
 
--(instancetype)initWithSportsType: (sportType)sportType;
+-(instancetype)initWithSportsType: (sportType)sportType AndSportState: (sportState)sportState;
 
 @end

@@ -12,6 +12,7 @@
 @interface myTrackController ()
 
 @property (weak, nonatomic) IBOutlet UIView *trackView;
+@property(nonatomic, strong) MapViewController *mapVc;
 
 @end
 
@@ -29,6 +30,9 @@
     if (self = [super init]) {
         
         MapViewController *mapViewVc = [[MapViewController alloc] initWithSportsType:self.track.mySportType];
+        
+        self.mapVc = mapViewVc;
+        
         [self addChildViewController:mapViewVc];
         
         [self.view addSubview:mapViewVc.view];
@@ -39,6 +43,12 @@
     }
     
     return self;
+}
+
+-(void)setTrack:(trackModel *)track
+{
+    _track = track;
+    self.mapVc.track = track;
 }
 
 

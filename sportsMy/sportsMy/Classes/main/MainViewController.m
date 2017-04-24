@@ -23,10 +23,9 @@
 }
 - (IBAction)trackClick:(UIButton *)sender {
     
-    trackModel *track = [[trackModel alloc] initWithSportsType:sender.tag];
+    trackModel *track = [[trackModel alloc] initWithSportsType:sender.tag AndSportState:sportStateContinue];
 
-//    myTrackController *vc = [[myTrackController alloc] init];
-    
+
     mainSportController *vc = [[mainSportController alloc]  init];
     
     vc.track = track;

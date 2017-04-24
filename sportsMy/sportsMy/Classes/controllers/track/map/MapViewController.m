@@ -43,7 +43,7 @@
     
     if (self){
        
-        self.track = [[trackModel alloc] initWithSportsType:sportType];
+        self.track = [[trackModel alloc] initWithSportsType:sportType AndSportState:self.track.mySportState];
 
     }
     

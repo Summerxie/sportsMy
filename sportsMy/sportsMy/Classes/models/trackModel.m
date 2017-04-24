@@ -11,10 +11,11 @@
 
 @implementation trackModel
 
--(instancetype)initWithSportsType: (sportType)sportType{
+-(instancetype)initWithSportsType: (sportType)sportType AndSportState: (sportState)sportState{
     self = [super init];
     
     _mySportType = sportType;
+    _mySportState = sportState;
     
     if (self){
         
@@ -42,6 +43,11 @@
 
 - (Mypolyline *)appedPolylineWithDestLoc: (CLLocation *)destLoc
 {
+    
+    if (self.mySportState != sportStateContinue) {
+        return nil;
+    }
+    
     if (self.sourceLoc == nil) {
         
         self.sourceLoc = destLoc;
